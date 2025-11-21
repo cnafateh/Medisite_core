@@ -133,11 +133,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'medisite_db',
-        'USER': 'medisite_user',
-        'PASSWORD': '12345678',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'NAME': 'medisite167_jared',
+        'USER': 'medisite167_jared',
+        'PASSWORD': 'G3DtIOVXeh6T',
+        'HOST': 'services.irn2.chabokan.net',
+        'PORT': '11482',
         'OPTIONS': {
             'auth_plugin': 'caching_sha2_password',
         }
