@@ -25,7 +25,26 @@ SECRET_KEY = 'django-insecure-p*)+c5c8di))dlo-+94gto4#yvevb=v0ddqcih^%3(m4utiw-)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://medisite.chbk.app/", 'medisite.chbk.app', '127.0.0.1:8000', '127.0.0.1']
+
+CSRF_TRUSTED_ORIGINS = ["https://medisite.chbk.app/", "https://medisite.chbk.app"]
+
+
+#CORS_ALLOWED_ORIGINS = [
+#    "https://medisite.chbk.app/",
+#]
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_METHODS = [
+  "DELETE",
+  "GET",
+  "OPTIONS",
+  "PATCH",
+  "POST",
+  "PUT",
+]
 
 
 # Application definition
@@ -41,6 +60,7 @@ INSTALLED_APPS = [
     # 3rd Party
     "rest_framework",
     'drf_spectacular',
+    'corsheaders',
 
     #Local
     "core",
@@ -50,6 +70,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -75,17 +96,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 
 # Password validation
@@ -145,11 +155,13 @@ DATABASES = {
 }
 
 
-import os
 
-# Media files (uploads)
-MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
+
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 
 
