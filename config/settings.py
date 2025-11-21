@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 
     #Local
     "core",
-    "doctor_info",
     "blog",
 ]
 
