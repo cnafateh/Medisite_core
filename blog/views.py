@@ -3,19 +3,19 @@ from .models import Category, Post
 from .serializers import CategorySerializer, PostSerializer
 
 # Categories
-class CategoryListCreateAPIView(generics.ListCreateAPIView):
+class CategoryListAPIView(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
-class CategoryRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+class CategoryRetrieveAPIView(generics.RetrieveAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
 # Posts
-class PostListCreateAPIView(generics.ListCreateAPIView):
+class PostListAPIView(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-class PostRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+class PostRetrieveAPIView(generics.RetrieveAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
