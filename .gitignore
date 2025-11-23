@@ -58,3 +58,6 @@ build/
 # Ignore migrations (optional)
 # **/migrations/
 # !**/migrations/__init__.py
+
+*.env
+config/.env
